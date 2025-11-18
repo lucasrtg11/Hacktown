@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Participantes</title></head>
+<body>
+<h1>Participantes</h1>
+<a href="/participantes/novo">+ Novo Participante</a>
+<ul>
+    <li th:each="p : ${participantes}">
+        <span th:text="${p.nome}"></span> -
+        <span th:text="${p.email}"></span>
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Palestrantes</title></head>
+<body>
+<h1>Palestrantes</h1>
+<a href="/palestrantes/novo">+ Novo Palestrante</a>
+<ul>
+    <li th:each="p : ${palestrantes}">
+        <strong th:text="${p.nome}"></strong> —
+        <span th:text="${p.bio}"></span>
+    </li>
+</ul>
+</body>
+</html>
