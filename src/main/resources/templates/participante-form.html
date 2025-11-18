@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head><title>Novo Participante</title></head>
-<body>
-<h1>Cadastrar Participante</h1>
-<form action="/participantes/salvar" method="post">
-    Nome: <input type="text" name="nome"><br><br>
-    CPF: <input type="text" name="cpf"><br><br>
-    Email: <input type="email" name="email"><br><br>
-    <button type="submit">Salvar</button>
-</form>
-</body>
+  <head>
+    <title>Novo Participante</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+      form {
+        width: 320px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: #f8f8f8;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+      }
+      label {
+        font-weight: bold;
+      }
+      button {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      button:hover {
+        background: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cadastrar Participante</h1>
+
+    <form action="/participantes/salvar" method="post">
+      <label>Nome:</label>
+      <input type="text" name="nome" required /><br /><br />
+
+      <label>CPF:</label>
+      <input
+        type="text"
+        name="cpf"
+        maxlength="14"
+        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+        placeholder="000.000.000-00"
+        required
+      /><br /><br />
+
+      <label>Email:</label>
+      <input type="email" name="email" required /><br /><br />
+
+      <button type="submit">Salvar</button>
+    </form>
+  </body>
 </html>
