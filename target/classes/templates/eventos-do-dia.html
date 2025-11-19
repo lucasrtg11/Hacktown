@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos do Dia</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="container" style="max-width:600px; margin: 40px auto;">
+        <h2>Eventos de Hoje</h2>
+
+        <div th:if="${eventos.isEmpty()}">
+            <p>Não há eventos cadastrados para hoje.</p>
+        </div>
+
+        <ul th:if="${!eventos.isEmpty()}">
+            <li th:each="evento : ${eventos}">
+                <strong th:text="${evento.nome}"></strong><br>
+                <span th:text="${evento.descricao}"></span><br>
+                <span th:text="${evento.data}"></span>
+            </li>
+        </ul>
+
+        <a href="/participantes" class="btn btn-primary">Voltar</a>
+    </div>
+
+</body>
+
+</html>

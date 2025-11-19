@@ -31,4 +31,5 @@ public class PalestranteController {
         lista.add(p);
         return "redirect:/palestrantes";
     }
+
 }

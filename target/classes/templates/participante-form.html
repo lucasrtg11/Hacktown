@@ -1,64 +1,118 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Novo Participante</title>
-    <meta charset="UTF-8" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 40px;
-      }
-      form {
-        width: 320px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background: #f8f8f8;
-      }
-      input {
-        width: 100%;
-        padding: 8px;
-        margin-top: 4px;
-      }
-      label {
-        font-weight: bold;
-      }
-      button {
-        margin-top: 15px;
-        padding: 10px;
-        width: 100%;
-        cursor: pointer;
-        background: #4caf50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-      }
-      button:hover {
-        background: #45a049;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Cadastrar Participante</h1>
+<html lang="pt-BR">
 
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastrar Participante</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("[[ @{/img/background.jpeg} ]]");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 35px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+      width: 380px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    label {
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+    }
+
+    input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3b82f6;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .back-link a {
+      color: #3b82f6;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h1>Cadastrar Participante</h1>
     <form action="/participantes/salvar" method="post">
       <label>Nome:</label>
-      <input type="text" name="nome" required /><br /><br />
+      <input type="text" name="nome" placeholder="Digite o nome completo" required />
 
       <label>CPF:</label>
-      <input
-        type="text"
-        name="cpf"
-        maxlength="14"
-        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-        placeholder="000.000.000-00"
-        required
-      /><br /><br />
+      <input type="text" name="cpf" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00"
+        required />
 
       <label>Email:</label>
-      <input type="email" name="email" required /><br /><br />
+      <input type="email" name="email" placeholder="exemplo@email.com" required />
 
       <button type="submit">Salvar</button>
     </form>
-  </body>
+
+    <div class="back-link">
+      <a href="/">Voltar</a>
+    </div>
+  </div>
+</body>
+
 </html>
